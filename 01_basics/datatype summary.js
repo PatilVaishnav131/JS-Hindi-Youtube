@@ -1,7 +1,7 @@
  //primitive data types 
  // 1. String 2.Number 3.Boolean 4.Null 5. Undefined 6.Symbol 7.BigInt
  
- //Non primitive 
+ //Non primitive (Reference)
  //1. Arrays 2.Objects 3. Functions
 
  let name = "vaishnav"
@@ -29,3 +29,28 @@ const myfunction = function(){
 
 console.log(typeof heroes, typeof myfunction , typeof obj)
 console.log(typeof(mobile_no))
+
+
+/*************************************************** */
+// Stack (Non-primitive) Heap(Primitive / REFERENCES)
+let num1 = 66446
+let num2 = num1
+num2 = 453
+console.log(num1);
+console.log(num2);
+//here num1 and num2 are different because the copy of the variables are stored
+
+const emp1 = {
+    name : "Vaishnav",
+    email : "vaishnav@gmail"
+}
+
+const emp2 = emp1
+
+emp2.email = "ghfgh@gmail"
+emp1.email = "wegweg"
+console.log(emp2);
+console.log(emp1);
+
+
+
