@@ -28,7 +28,7 @@ const obj3 = {5:"a" ,6:"b"}
 //const obj4 = Object.assign({},obj1,obj2,obj3)
 
 const obj4 = {...obj1, ...obj2, ...obj3}
-console.log(obj4);
+//console.log(obj4);
 
 //array of the objects
 const users = [
@@ -42,12 +42,30 @@ const users = [
         name : "nav"
     }
 ]
-console.log(users[0]);
+// console.log(users[0]);
 
-console.log(Object.keys(tinderUser))
-console.log(Object.values(tinderUser))
-console.log(Object.entries(tinderUser))
-console.log(tinderUser.hasOwnProperty('isLoggedIn'))
+// console.log(Object.keys(tinderUser))
+// console.log(Object.values(tinderUser))
+// console.log(Object.entries(tinderUser))
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'))
+
+
+// ***********************PART 3 ***********//
+//Destructuring of the objects
+const employee = {
+    
+    Empname : "Baishnav",
+    email : "vaishnav@google"
+}
+const {Empname : name} = employee;
+console.log(name);
+
+{
+    {},
+    {},
+    {}
+} //Json Format
+
 
 
 
