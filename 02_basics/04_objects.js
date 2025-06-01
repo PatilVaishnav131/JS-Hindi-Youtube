@@ -60,11 +60,11 @@ const employee = {
 const {Empname : name} = employee;
 console.log(name);
 
-{
-    {},
-    {},
-    {}
-} //Json Format
+// {
+//     {},
+//     {},
+//     {}
+// } //Json Format
 
 
 
