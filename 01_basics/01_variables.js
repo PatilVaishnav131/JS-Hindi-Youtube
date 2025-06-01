@@ -1,3 +1,4 @@
+// () - brackets {} - curly braces [] - brackets
 const accountId = 14553
 let accountEmail = "vaishnav@gmail.com"
 var accountPassword = "vaishnav"
