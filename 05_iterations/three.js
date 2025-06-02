@@ -24,6 +24,11 @@ for(const mapper of map1){
     console.log(mapper)
 }
 
+//if we want to display the key value as a seperate not as array
+for (const [key,value] of map1){
+    console.log(key , ":-" , value)
+}
+
 //if we try to iterate the objects through the for of loop 
 const obj = {
     name : "vaishnav",
