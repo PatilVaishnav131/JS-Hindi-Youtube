@@ -5,10 +5,10 @@
 
 # solution code
 
-## project code 1 
+## project code 1 :- Background Color Changer 
 
 ```javascript
-
+//we learnt about the event listener
 const body = document.querySelector('body');
 const buttons = document.querySelectorAll('.button');
 buttons.forEach( function(button){
@@ -33,8 +33,10 @@ buttons.forEach( function(button){
 })
 ```
 
-## project code 2
+## project code 2 :- BMI calculator
 ```javascript
+//we learnt about the timing like when we have to store the element 
+//also about the preventDefault()
 const form = document.querySelector('form');
 //if we try to get the value of height now we will get an empty value
 //const height = document.querySelector("#height")
@@ -74,4 +76,15 @@ form.addEventListener('submit', function (e) {
 
 });
 
+```
+
+## project code 3 :- local time clock 
+```javascript
+const clock = document.getElementById('clock')
+
+//to repeatedly call a function we use 
+setInterval(function(){
+  let date = new Date()
+  clock.innerHTML = date.toLocaleTimeString()
+} ,1000) //the time here is in milliseconds
 ```
