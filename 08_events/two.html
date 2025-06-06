@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> document</title>
+</head>
+<body>
+    <h1>Chai aur Code !</h1>
+    <button>Stop</button>
+</body>
+<script>
+    const sayMyName = function(){
+        console.log("Vaishnav")
+    }
+    const displayMyname = setTimeout(sayMyName , 3000) //here we have to pass just the reference of the function handler function
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Best JS series available on the Youtube"
+    }
+
+    const changeMe = setTimeout(changeText , 3000) //now we have to stop this on an event
+
+    const button = document.querySelector('button')
+    button.addEventListener('click',function(e){
+        clearTimeout(changeMe) //in this we have to pass the name of the setTimeout
+        console.log("STOPPED!")
+    })
+
+</script>
+</html>
