@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> document</title>
+</head>
+<body>
+    <h1>Chai aur Code !</h1>
+    <button id = 'start'>Start</button>
+    <button id = 'stop'>Stop</button>
+</body>
+<script>
+    const message = function(str){
+        console.log("Hi", str)
+    }
+    const startButton = document.querySelector('#start')
+    const stopButton = document.querySelector('#stop')
+    // const sayhello = setInterval(message , 2000 , "hello") //this is how you pass a parameter to the function because the first parameter wil always be the reference therefore we cannot pass in it and the second parameter is the fixed interval
+    let sayhello;
+    startButton.addEventListener('click', function(e){
+        sayhello = setInterval(functiontoTime , 2000 , "The time is ")
+    })
+    stopButton.addEventListener('click',function(e){
+        clearInterval(sayhello)
+    })
+    const sayTheCurrentTime = new Date()
+    let functiontoTime = function(str){
+        console.log(str,sayTheCurrentTime.toLocaleTimeString())
+    }
+//functiontoTime()
+
+</script>
+</html>
