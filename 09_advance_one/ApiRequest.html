@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body style = "background-color: #212121; color: white; ">
+     0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+    <button>Click here to fetch the Image and COunt of followers from the API</button>
+    <div id ='card'>
+        <img  id ='avatar' src="" alt = "image">
+        <div id = 'container'>
+            
+            
+
+        </div>
+    </div>
+
+    
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    let avatar;
+    let followers;
+    xhr.open('GET',requestUrl) 
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){  //the operation is completed 
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data)                 //the api gives the data in  the form of the string to convert into json
+            console.log(data)
+            console.log(data.followers)
+            avatar = data.avatar_url
+            followers = data.followers
+            console.log(followers)
+        }
+    }
+    xhr.send()    //xhr.open() is not called automatically for this we need to call the xhr.send() function
+    const av = document.getElementById('avatar')
+    const p = document.getElementById('container')
+    const button = document.querySelector('button')
+    button.addEventListener('click' ,(e) =>{
+        p.innerHTML = `<p> Followers Count : ${followers} </p>`
+        av.setAttribute('src' , `${avatar}`)
+
+    })
+
+
+</script>
+</html>
