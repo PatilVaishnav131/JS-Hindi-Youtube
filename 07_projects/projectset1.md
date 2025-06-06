@@ -183,3 +183,60 @@ function newGame() {
 }
 
 ```
+
+
+## Project code 5 - Windows key key code and code 
+```javascript
+const insert = document.getElementById('insert');
+window.addEventListener('keydown', (e) => {
+  document.querySelector('#insert').innerHTML = `
+    <table>
+      <tr>
+        <th>Key
+        <th>Key code 
+        <th>Code
+      </tr>
+      <tr>
+        <th>${e.key === ' ' ? 'space' : e.key}
+        <th>${e.keyCode}
+        <th>${e.code}
+      </tr>
+    </table>
+  `;
+});
+```
+
+## Project  code 6 - random BG changer
+```javascript
+//to generate a random color we need to generate random numbers from 0 to 16
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let hexCode = '#';
+  for (let i = 0; i < 6; i++) {
+    hexCode += hex[Math.floor(Math.random() * 16)];
+  }
+  return hexCode;
+};
+console.log(randomColor());
+//document.body.style.backgroundColor = `${randomColor()}`;
+
+const start = document.querySelector('#start');
+const stop = document.querySelector('#stop');
+let intervalId;
+
+changeBG = function () {
+  document.body.style.backgroundColor = `${randomColor()}`;
+};
+start.addEventListener('click', function (e) {
+  if (!intervalId) {
+    //this will only write the values when the value is null !
+    intervalId = setInterval(changeBG, 1000); //if we not place the check condition it wil overwrite the set Interval and cannont be clearead
+  }
+});
+stop.addEventListener('click', function (e) {
+  clearInterval(intervalId);
+  intervalId = null;
+});
+```
+
+
