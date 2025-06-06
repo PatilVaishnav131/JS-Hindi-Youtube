@@ -28,14 +28,47 @@
     //clientX , clientY , screenX , screenY
     //altKey , ctrlKey , shiftKey , keyCode
 
-    document.getElementById('images').addEventListener('click',function(e){
-        console.log(e)
-        console.log("Image is selected")
-    },true)
+    //the third parameter for the event listener is about the capturing mode like when we have more than one functions working on the same element which one will be executed first is decided 
+    //by default the parameter is false i.e bubbling going from down to up
+    // if it is true then it is set to capturing mode i.e it will go from the top to bottom
+    //therefore the third parameter is the capture event true/false 
 
-    document.getElementById('owl').addEventListener('click',function(e){
-        console.log(e)
-        console.log("owl is selected")
-    },true)
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log(e)
+    //     console.log("Image is selected")
+    // },false)
+
+    
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e)
+    //     console.log("owl is selected")
+    //     e.stopPropagation()
+    // },false)
+    // //if we dont want the propagation then we can use this
+
+    // //prevent the default action
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("Google is selected")
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    // })
+
+    //a small project to remove the clicked images from the webpage
+    document.querySelector('#images').addEventListener(
+        'click',function(e){
+            if(e.target.tagName === 'IMG'){
+                console.log(e.target.id)
+                let removeIt = e.target.parentNode //now removeIt has stored the li of the images
+                //removeIt.remove()  //the remove() functions removes the current element on which the function is applied 
+
+                //alternative 
+                
+                removeIt.parentNode.removeChild(removeIt)
+            } 
+        }
+    )
+    
 </script>
 </html> 
