@@ -4,7 +4,7 @@ const promise1 = new Promise(function(resolve , reject){
     setTimeout(function(){
         //console.log("Async Task 1")
         resolve()  //if we dont use the resolve function the function will not executed
-    },3000)
+    },500)
 })  //lpromise is created
 promise1.then(function(){
     //console.log("Async TAsk 1 is resolved")
@@ -15,7 +15,7 @@ new Promise(function(resolve, reject){
     setTimeout(function(){
        // console.log("Async task 2")
         resolve()
-    },3000)
+    },500)
 }).then(function(){
    // console.log("Async task 2 is resolved")
 })
@@ -25,7 +25,7 @@ const promise3 = new Promise(function(resolve , reject){
     setTimeout(function(){
         //console.log("Async Task 3")
         resolve({username : "Vaishnav" ,email : "vaishnav@google.com"})
-    },3000)
+    },500)
 })
 promise3.then(function(user){  //the data passed in the resolve function is accessed using the then function parameter
     console.log(user)
@@ -42,7 +42,7 @@ const promise4 = new Promise(function(resolve, reject){
         else{
             reject("ERROR : Something Went Wrong !")
         }
-    },7000)
+    },500)
 })
 promise4.then((user)=>{
     console.log(user)
@@ -68,7 +68,7 @@ const promise5 = new Promise(function(resolve,reject){
         else{
             reject("ERROr in the Promise 5")
         }
-    },1000)
+    },500)
 })
 
 //now accessing the promise using the async and await keywords
@@ -116,3 +116,7 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 .catch( ()=> {
     console.log("there is an error")
 })
+
+//NOTE : the priority of the fetch is more than the setTimeout () fucntion 
+// Task Queue for this and MicroTAskQueue / Priority Queue for the fetch
+//fetch is the successor of the XHR making easier to understand the syntax
